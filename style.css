@@ -1,0 +1,175 @@
+@import url("sites/nav.css");
+
+:root {
+  --main_font: "Bellefair", serif;
+  --second_font: "Barlow Condensed", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 0.5fr 1fr;
+  padding: 2%;
+  min-height: 100vh;
+  position: relative;
+  background-image: url(assets/home/background-home-mobile.jpg);
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.main-section {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 6%;
+}
+.second-header {
+  font-size: 16px;
+  font-family: var(--second_font);
+  letter-spacing: 2.7px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(208, 214, 249, 1);
+}
+.main-header {
+  font-size: 80px;
+  font-family: var(--main_font);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+}
+.section-description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  padding: 0 5%;
+  color: rgba(208, 214, 249, 1);
+}
+
+.btn-section {
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+  background-color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 23px;
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  font-family: var(--second_font);
+}
+
+.btn-overflow {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.24);
+  transition: 0.3s;
+}
+.btn:hover .btn-overflow {
+  width: 150%;
+  height: 150%;
+}
+
+@media (min-width: 624px) {
+  .homepage {
+    background-image: url(assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media (min-width: 766px) {
+  .homepage {
+    grid-template-rows: 0.3fr 1fr 1fr;
+  }
+
+  .second-header {
+    font-size: 20px;
+  }
+  .main-header {
+    font-size: 150px;
+  }
+  .section-description {
+    width: 80%;
+    font-size: 17px;
+  }
+  .btn {
+    width: 200px;
+    height: 200px;
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 814px) {
+  .homepage {
+    grid-template-rows: 0.3fr 1fr 1fr;
+    background-image: url(assets/home/background-home-desktop.jpg);
+  }
+  .btn-section {
+    grid-row: 3/5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.18fr 1fr;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+  .main-section {
+    align-items: start;
+    margin-left: 10%;
+  }
+  .main-header {
+    animation: slideHeader both 2.5s;
+  }
+  .section-description {
+    width: 85%;
+    padding: 0;
+    text-align: start;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .btn-section {
+    grid-row: 2/3;
+  }
+
+  @keyframes slideHeader {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: 5%;
+    }
+  }
+}

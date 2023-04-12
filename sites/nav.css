@@ -48,6 +48,7 @@
   justify-content: start;
   align-items: center;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   width: 75%;
   z-index: 10;
   transition: 0.3s;

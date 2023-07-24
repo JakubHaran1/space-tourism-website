@@ -7,12 +7,8 @@ const hamburgerEL = document.querySelectorAll(".hamburger-element")
 
 const navFunction = () => {
     nav.classList.toggle("active")
-
-    for (let i = 0; i < hamburgerEL.length; i++) {
-        hamburgerEL[i].classList.toggle("active")
-    }
+    hamburgerEL.forEach(el => el.classList.toggle("active"))
 }
-
 // Main Function
 
 const main = () => {

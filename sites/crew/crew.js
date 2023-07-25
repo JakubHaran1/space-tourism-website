@@ -3,13 +3,10 @@ const subMenuWrapper = document.querySelector(".sub-menu.desktop");
 const subMenuWrapperMobile = document.querySelector(".sub-menu.desktop");
 
 // DOM ELEMENTS TO CHANGE
-
 const personName = document.querySelector(".name");
 const role = document.querySelector(".job");
 const bio = document.querySelector(".description");
 const imgEl = document.querySelector(".crew-img img");
-
-
 
 // DATA
 const crew_data = [{
@@ -67,7 +64,6 @@ const slideBtn = (e) => {
 const init = () => {
     subMenuWrapper.addEventListener("click", e => slideBtn(e));
     subMenuWrapperMobile.addEventListener("click", e => slideBtn(e));
-
 }
 
 init()
